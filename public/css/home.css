@@ -16,6 +16,22 @@ body {
     justify-content: space-between;
 }
 
+.disco img {
+    display: block; /* Remove o espaçamento inferior da imagem */
+    width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain; /* Garante que a imagem se ajuste sem distorcer */
+    animation: rodando 3s infinite linear; /* Efeito de rotação */
+}
+@keyframes rodando {
+    from {
+        transform: rotate(0deg); /* Inicia na posição original */
+    }
+    to {
+        transform: rotate(360deg); /* Finaliza com 360 graus */
+    }
+}
+
 /* Cabeçalho */
 header {
     display: flex;
@@ -25,13 +41,17 @@ header {
     max-width: 1200px;
     padding: 15px 30px;
     background-color: #3a3939; /* Fundo do cabeçalho */
-    border: 2px solid #049623;
+    border-bottom: 2px solid #049623;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-
+.disco {
+    display: inline-block; /* Para ajustar o tamanho do contêiner à imagem */
+    padding: 0; /* Remove qualquer padding */
+    margin: 0; /* Garante que não haja margem externa */
+}
 
 /* Navegação */
 nav {
