@@ -141,14 +141,32 @@ const updateDisco = async (req, res) => {
 
 // Deletar um disco
 const deleteDisco = async (req, res) => {
-    try {
-        await Disco.destroy({
-            where: { id: req.params.id }
-        });
-        res.redirect('/discos');
-    } catch (error) {
-        res.status(500).send('Erro ao deletar disco');
+  try {
+    const { id } = req.params;
+
+    // Verifica se o disco existe
+    const disco = await Disco.findByPk(id, {
+      include: [{ model: Faixa, as: 'faixas' }],
+    });
+
+    if (!disco) {
+      return res.status(404).send('Disco não encontrado');
     }
+
+    // Verifica se existem faixas associadas ao disco
+    if (disco.faixas && disco.faixas.length > 0) {
+      return res.status(400).send('O disco possui faixas associadas e não pode ser excluído.');
+    }
+
+    // Remove o disco
+    await disco.destroy();
+
+    // Redireciona para a lista de discos ou retorna uma mensagem de sucesso
+    res.redirect('/discos'); // Altere se quiser um comportamento diferente
+  } catch (error) {
+    console.error('Erro ao deletar disco:', error);
+    res.status(500).send('Erro ao deletar disco');
+  }
 };
 
 module.exports = {

@@ -3,14 +3,19 @@ const { Artista, Disco, Genero, ArtistaGenero, sequelize } = require('../models'
 // Listar todos os artistas
 const getAllArtistas = async (req, res) => {
     try {
-        const artistas = await Artista.findAll({
-            order: [['nome', 'ASC']] // Ordena por nome
-        });
-        res.render('artistas', { artistas });
+      // Recupera todos os artistas
+      const artistas = await Artista.findAll();
+      
+      // Se houver erro (excluindo artistas com discos associados), passa a variável 'error'
+      res.render('artistas', { 
+        artistas, 
+        error: req.query.error || null  // Passa a variável error (se existir)
+      });
     } catch (error) {
-        res.status(500).send('Erro ao listar artistas');
+      console.error(error);
+      res.status(500).send('Erro ao carregar os artistas');
     }
-};
+  };
 
 // Mostrar um artista específico e seus discos e gêneros
 const getArtistaById = async (req, res) => {
@@ -120,14 +125,33 @@ const updateArtista = async (req, res) => {
 // Deletar um artista
 const deleteArtista = async (req, res) => {
     try {
-        await Artista.destroy({
-            where: { id: req.params.id }
-        });
-        res.redirect('/artistas');
+      const { id } = req.params;
+  
+      // Verificar se o artista existe
+      const artista = await Artista.findByPk(id, {
+        include: [{ model: Disco, as: 'discos' }]
+      });
+  
+      if (!artista) {
+        return res.status(404).send('Artista não encontrado');
+      }
+  
+      // Verificar se o artista tem discos associados
+      if (artista.discos.length > 0) {
+        // Redireciona de volta com o erro na query string
+        return res.redirect('/artistas?error=Não é possível excluir o artista, pois ele possui discos associados.');
+      }
+  
+      // Excluir o artista
+      await artista.destroy();
+  
+      // Redireciona para a lista de artistas após exclusão bem-sucedida
+      res.redirect('/artistas');
     } catch (error) {
-        res.status(500).send('Erro ao deletar artista');
+      console.error(error);
+      res.status(500).send('Erro ao excluir o artista');
     }
-};
+  };
 
 module.exports = {
     getAllArtistas,

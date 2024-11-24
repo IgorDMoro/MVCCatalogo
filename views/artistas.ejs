@@ -19,7 +19,13 @@
 
     <div class="artists-container">
         <a href="/artistas/add" class="add-artist-button"><i class="fas fa-plus-circle"></i> Adicionar Artista</a>
-            
+        
+        <% if (error) { %>
+            <div class="error-message">
+                <p><%= error %></p>
+            </div>
+        <% } %>
+
         <div class="artists-list">
             <% artistas.forEach(function(artista) { %>
                 <div class="artist-item">
@@ -27,18 +33,16 @@
                         <%= artista.nome %>
                     </button>
                     <div class="artist-options">
-                        <button class="edit-artist" onclick="window.location.href='/editar-artista/<%= artista.id %>'">
-                            <i class="fas fa-edit"></i> Editar
-                        </button>
-                        <button class="delete-artist" onclick="window.location.href='/excluir-artista/<%= artista.id %>'">
-                            <i class="fas fa-trash"></i> Excluir
-                        </button>
+                        <form action="/artistas/<%= artista.id %>?_method=DELETE" method="POST" class="delete-artist-form">
+                            <button type="submit" class="delete-artist">
+                                <i class="fas fa-trash"></i> Excluir
+                            </button>
+                        </form>
                     </div>
                 </div>
             <% }) %>
         </div>
     </div>
-
 
 </body>
 </html>

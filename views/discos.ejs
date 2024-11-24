@@ -41,9 +41,9 @@
                         <button class="edit-disco" onclick="window.location.href='/editar-disco/<%= disco.id %>'">
                             <i class="fas fa-edit"></i> Editar
                         </button>
-                        <button class="delete-disco" onclick="window.location.href='/excluir-disco/<%= disco.id %>'">
-                            <i class="fas fa-trash"></i> Excluir
-                        </button>
+                        <form action="/discos/<%= disco.id %>?_method=DELETE" method="POST" style="display: inline;">
+                            <button type="submit" class="delete-button">Excluir</button>
+                        </form>
                     </div>
                 </div>
             <% }) %>

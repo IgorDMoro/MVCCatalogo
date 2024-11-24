@@ -49,9 +49,10 @@
                 <button class="edit-faixa" onclick="window.location.href='/editar-faixa/<%= faixa.id %>'">
                   <i class="fas fa-edit"></i> Editar
                 </button>
-                <button class="delete-faixa" onclick="window.location.href='/excluir-faixa/<%= faixa.id %>'">
-                  <i class="fas fa-trash"></i> Excluir
-                </button>
+                <form action="/faixas/<%= faixa.id %>?_method=DELETE" method="POST" class="delete-faixa-form">
+                  <button type="submit" class="faixa-artist">
+                      <i class="fas fa-trash"></i> Excluir
+                  </button>
               </div>
             </div>
           <% }) %>
