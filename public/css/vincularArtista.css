@@ -1,0 +1,135 @@
+/* Configuração Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #444444; /* Fundo preto */
+    color: #ffffff; /* Texto branco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px 30px;
+    background-color: #3a3939; /* Fundo do cabeçalho */
+    border-bottom: 2px solid #049623;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    outline: white;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff; /* Cor do texto */
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #FF4057; /* Fundo ao passar o mouse */
+    color: #ffffff; /* Texto branco */
+    transform: scale(1.1); /* Aumenta levemente */
+}
+
+/* Container principal */
+.vincular-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #1c1c1c; /* Fundo escuro */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+/* Título */
+.vincular-title {
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Formulário */
+.vincular-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+/* Label */
+.vincular-label {
+    color: white;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+/* Select */
+.vincular-select {
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #FF4057; /* Borda vermelha */
+    border-radius: 8px;
+    background-color: #333333;
+    color: white;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.vincular-select:focus {
+    border-color: #FF6347; /* Borda mais clara ao focar */
+}
+
+/* Botão */
+.vincular-button {
+    background-color: #FF4057;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.vincular-button:hover {
+    background-color: #d0334d;
+    transform: scale(1.05); /* Pequeno aumento no hover */
+}
+
+.vincular-button:active {
+    transform: scale(0.95); /* Reduz no clique */
+}
+

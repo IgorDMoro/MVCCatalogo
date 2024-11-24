@@ -1,0 +1,149 @@
+/* Configuração Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #444444; /* Fundo preto */
+    color: #ffffff; /* Texto branco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px 30px;
+    background-color: #3a3939; /* Fundo do cabeçalho */
+    border-bottom: 2px solid #049623;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    outline: white;
+}
+
+
+/* Navegação */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #FF4057;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Container principal para os gêneros */
+.genres-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+/* Botão para adicionar gênero */
+.add-genre-button {
+    background-color: #FF4057;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-genre-button:hover {
+    background-color: #d0334d;
+}
+
+.genres-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 colunas de tamanho igual */
+    gap: 10px; /* Espaço entre os itens */
+    width: 100%;
+    max-width: 1200px; /* Máximo de largura */
+    justify-items: center; /* Alinha os itens no centro das colunas */
+    align-items: center; /* Alinha os itens no centro das linhas */
+}
+
+/* Item de gênero */
+.genre-item {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    height: 70px;
+    max-width: 400px; /* Limita o tamanho máximo dos itens */
+    transition: background-color 0.3s ease;
+}
+
+.genre-item:hover {
+    background-color: #333333;
+}
+
+.genre-name {
+    font-size: 1.2em;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.genre-name:hover {
+    color: #FF4057;
+}
+
+/* Botões de editar e excluir */
+.genre-options {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-genre, .delete-genre {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.edit-genre:hover {
+    color: #FFD700;
+}
+
+.delete-genre:hover {
+    color: #FF6347;
+}

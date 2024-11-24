@@ -32,11 +32,7 @@ header {
     outline: white;
 }
 
-/* Logo */
-.logo img {
-    height: 50px; /* Redimensiona para altura fixa */
-    width: auto; /* Mantém a proporção da imagem */
-}
+
 
 /* Navegação */
 nav {
