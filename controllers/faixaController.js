@@ -60,12 +60,11 @@ const addFaixa = async (req, res) => {
     }
 };
 
-// Exibir formulário para edição de faixa
 const renderEditFaixaForm = async (req, res) => {
     try {
         const faixa = await Faixa.findByPk(req.params.id);
         if (faixa) {
-            res.render('faixas/edit', { faixa });
+            res.render('faixasEdit', { faixa });
         } else {
             res.status(404).send('Faixa não encontrado');
         }
@@ -74,17 +73,34 @@ const renderEditFaixaForm = async (req, res) => {
     }
 };
 
-// Atualizar um faixa existente
+// Atualizar uma faixa existente
 const updateFaixa = async (req, res) => {
-    try {
-        const { titulo, discoId } = req.body;
-        await Faixa.update({ titulo, discoId }, {
-            where: { id: req.params.id }
-        });
-        res.redirect('/faixas');
-    } catch (error) {
-        res.status(500).send('Erro ao atualizar faixa');
+    const method = req.body._method;
+
+    if (method === 'PUT') {
+        try {
+            const { titulo } = req.body;
+
+            // Verificar se a faixa existe
+            const faixa = await Faixa.findByPk(req.params.id);
+
+            if (!faixa) {
+                return res.status(404).send('Faixa não encontrada');
+            }
+
+            // Atualizar a faixa
+            await faixa.update({ titulo });
+
+            // Redirecionar após atualização
+            return res.redirect('/faixas');
+        } catch (error) {
+            console.error('Erro ao atualizar faixa:', error);
+            return res.status(500).send('Erro ao atualizar a faixa');
+        }
     }
+
+    // Método não permitido
+    return res.status(405).send('Método não permitido');
 };
 
 // Deletar um faixa
@@ -106,5 +122,5 @@ module.exports = {
     addFaixa,
     renderEditFaixaForm,
     updateFaixa,
-    deleteFaixa
+    deleteFaixa,
 };

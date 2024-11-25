@@ -46,7 +46,7 @@
       
               <!-- Opções de editar e excluir faixa -->
               <div class="faixa-options">
-                <button class="edit-faixa" onclick="window.location.href='/editar-faixa/<%= faixa.id %>'">
+                <button class="edit-faixa" onclick="window.location.href='faixas/<%= faixa.id %>/edit'">
                   <i class="fas fa-edit"></i> Editar
                 </button>
                 <form action="/faixas/<%= faixa.id %>?_method=DELETE" method="POST" class="delete-faixa-form">
