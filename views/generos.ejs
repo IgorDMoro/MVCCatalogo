@@ -27,12 +27,15 @@
         <div class="genre-item">
           <button class="genre-name"><%= genero.nome %></button>
           <div class="genre-options">
-            <button
-              class="edit-genre"
-              onclick="window.location.href='/generos/edit/<%= genero.id %>'"
-            >
+            <form
+            action="/generos/<%= genero.id %>/edit"
+            method="GET"
+            class="edit-genre-form"
+          >
+            <button class="edit-genre">
               <i class="fas fa-edit"></i> Editar
             </button>
+          </form>
             <form
               action="/generos/<%= genero.id %>?_method=DELETE"
               method="POST"
@@ -50,8 +53,8 @@
     </div>
     <footer>
       <a href="/" class="voltas"
-          ><i class="volta"></i> Voltar ao Menu Inicial</a
-        >
-      </footer>
+        ><i class="volta"></i> Voltar ao Menu Inicial</a
+      >
+    </footer>
   </body>
 </html>

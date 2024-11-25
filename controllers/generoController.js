@@ -47,7 +47,7 @@ const renderEditGeneroForm = async (req, res) => {
     try {
         const genero = await Genero.findByPk(req.params.id);
         if (genero) {
-            res.render('generos/edit', { genero });
+            res.render('editGenero', { genero });
         } else {
             res.status(404).send('Genero não encontrado');
         }

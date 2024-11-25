@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Gênero</title>
+  <link rel="stylesheet" href="/css/editGenero.css">
+</head>
+<body>
+    <header>
+
+        <nav>
+            <a href="/"><i class="homepage"></i> Home</a>
+            <a href="/artistas"><i class="fa-solid fa-user"></i> Artistas</a>
+            <a href="/discos"><i class="fas fa-record-vinyl"></i> Discos</a>
+            <a href="/faixas"><i class="fas fa-music"></i> Faixas</a>
+            <a href="/generos"><i class="fas fa-tags"></i> Generos</a>
+        </nav>
+    </header>
+  <h1>Editar Gênero</h1>
+  <form action="/generos/<%= genero.id %>?_method=PUT" method="POST">
+    <label for="nome">Nome do Gênero:</label>
+    <input type="text" id="nome" name="nome" value="<%= genero.nome %>" required>
+    <button type="submit">Salvar Alterações</button>
+  </form>
+  <a href="/generos">Cancelar</a>
+</body>
+</html>
