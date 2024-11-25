@@ -98,7 +98,7 @@ nav a:hover {
     margin-bottom: 20px; /* Adiciona um espaço abaixo do botão de salvar */
 }
 
-.edit-track-container: hover {
+.edit-track-container:hover {
     background-color: #025815;
 }
 

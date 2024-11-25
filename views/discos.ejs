@@ -48,12 +48,9 @@
             </button>
             <% } %>
             <!-- Botões de editar e excluir -->
-            <button
-              class="edit-disco"
-              onclick="window.location.href='/editar-disco/<%= disco.id %>'"
-            >
+            <button class="edit-disco" onclick="window.location.href='discos/<%= disco.id %>/edit'">
               <i class="fas fa-edit"></i> Editar
-            </button>
+          </button>
             <form
               action="/discos/<%= disco.id %>?_method=DELETE"
               method="POST"

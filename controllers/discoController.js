@@ -114,30 +114,102 @@ const addDisco = async (req, res) => {
 
 // Exibir formulário para edição de disco
 const renderEditDiscoForm = async (req, res) => {
-    try {
-        const disco = await Disco.findByPk(req.params.id);
-        if (disco) {
-            res.render('discos/edit', { disco });
-        } else {
-            res.status(404).send('Disco não encontrado');
-        }
-    } catch (error) {
-        res.status(500).send('Erro ao carregar formulário de edição');
-    }
+  try {
+      const disco = await Disco.findByPk(req.params.id);
+      const faixas = await Faixa.findAll();
+      if (disco) {
+          res.render('discosEdit', { disco, faixas });
+      } else {
+          res.status(404).send('Disco não encontrado');
+      }
+  } catch (error) {
+      res.status(500).send('Erro ao carregar formulário de edição');
+  }
 };
 
-// Atualizar um disco existente
-const updateDisco = async (req, res) => {
-    try {
-        const { titulo, ano_lancamento, capa, artistaId } = req.body;
-        await Disco.update({ titulo, ano_lancamento, capa, artistaId }, {
-            where: { id: req.params.id }
-        });
-        res.redirect('/discos');
-    } catch (error) {
-        res.status(500).send('Erro ao atualizar disco');
-    }
+const updateNomeAnoDisco = async (req, res) => {
+  const method = req.body._method;
+
+  if (method === 'PUT') {
+      try {
+          const discoId = req.params.id;
+
+          // Verificar se o disco existe
+          const disco = await Disco.findByPk(discoId);
+
+          if (!disco) {
+              return res.status(404).send('Disco não encontrado');
+          }
+
+          // Atualizar apenas título e ano de lançamento
+          const { titulo, ano_lancamento } = req.body;
+
+          await disco.update({
+              titulo: titulo || disco.titulo,
+              ano_lancamento: ano_lancamento || disco.ano_lancamento
+          });
+
+          // Redirecionar após a atualização
+          return res.redirect(`/discos/${discoId}/edit`);
+      } catch (error) {
+          console.error('Erro ao atualizar disco:', error);
+          return res.status(500).send('Erro ao atualizar o disco');
+      }
+  }
+
+  // Método não permitido
+  return res.status(405).send('Método não permitido');
 };
+
+
+// Atualizar capa do disco
+const updateCapa = async (req, res) => {
+  const method = req.body._method;
+
+  if (method === 'PUT') {
+      try {
+          const discoId = req.params.id;
+
+          // Verificar se o disco existe
+          const disco = await Disco.findByPk(discoId);
+
+          if (!disco) {
+              return res.status(404).send('Disco não encontrado');
+          }
+
+          // Se houver um arquivo de nova capa, substituímos
+          if (req.file) {
+              // Apagar a capa anterior
+              const caminhoAntigo = disco.capa;
+              if (caminhoAntigo) {
+                  const caminhoArquivoAntigo = path.join(__dirname, '..', 'public', caminhoAntigo);
+                  if (fs.existsSync(caminhoArquivoAntigo)) {
+                      fs.unlinkSync(caminhoArquivoAntigo); // Apaga a capa antiga
+                  }
+              }
+
+              // Atualiza a capa com a nova
+              const capa = req.file ? req.file.path.replace(/\\/g, '/').replace('public/', '') : null;
+
+              // Atualiza o campo capa no banco
+              await disco.update({ capa });
+          }
+
+          // Redirecionar após atualização
+          return res.redirect(`/discos/${discoId}/edit`);
+
+      } catch (error) {
+          console.error('Erro ao atualizar a capa do disco:', error);
+          return res.status(500).send('Erro ao atualizar a capa');
+      }
+  }
+
+  // Método não permitido
+  return res.status(405).send('Método não permitido');
+};
+
+const fs = require('fs'); // Importar o módulo File System
+
 
 // Deletar um disco
 const deleteDisco = async (req, res) => {
@@ -170,11 +242,12 @@ const deleteDisco = async (req, res) => {
 };
 
 module.exports = {
-    getAllDiscos,
-    getDiscoById,
-    renderAddDiscoForm,
-    addDisco,
-    renderEditDiscoForm,
-    updateDisco,
-    deleteDisco
+  getAllDiscos,
+  getDiscoById,
+  renderAddDiscoForm,
+  addDisco,
+  renderEditDiscoForm,
+  updateNomeAnoDisco,
+  updateCapa,
+  deleteDisco
 };

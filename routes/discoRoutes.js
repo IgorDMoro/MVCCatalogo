@@ -18,8 +18,11 @@ router.get('/:id', discoController.getDiscoById);
 // Rota para exibir o formulário de edição de um disco específico
 router.get('/:id/edit', discoController.renderEditDiscoForm);
 
-// Rota para atualizar um disco
-router.put('/:id', discoController.updateDisco);
+// Rota pra atualizar nome e ano do disco
+router.post('/:id/edit/dados', discoController.updateNomeAnoDisco)
+
+// Rota para atualizar a capa do disco
+router.post('/:id/edit/capa', upload.single('capa'), discoController.updateCapa);
 
 // Rota para deletar um disco
 router.delete('/:id', discoController.deleteDisco);
