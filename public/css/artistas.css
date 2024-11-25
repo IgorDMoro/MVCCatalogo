@@ -49,7 +49,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #FF4057; /* Fundo ao passar o mouse */
+    background-color: #049623; /* Fundo ao passar o mouse */
     color: #ffffff; /* Texto branco */
     transform: scale(1.1); /* Aumenta levemente */
 }
@@ -57,12 +57,12 @@ nav a:hover {
 /* Container principal para os artistas */
 .artists-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 /* Botão para adicionar artista */
@@ -78,7 +78,7 @@ nav a:hover {
 }
 
 .add-artist-button:hover {
-    background-color: #d0334d;
+    background-color: #530e0e;
 }
 
 /* Lista de artistas */
@@ -142,4 +142,20 @@ nav a:hover {
 
 .delete-artist:hover {
     color: #FF6347; /* Cor tomate */
+}
+
+.voltas:hover{
+    background-color: #530e0e;
+
+}
+.voltas{
+    background-color: #FF4057;
+    background-color: #FF4057;
+    color: white;
+    padding: 10px 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
 }

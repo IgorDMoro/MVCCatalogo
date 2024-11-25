@@ -49,13 +49,15 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #FF4057; /* Fundo ao passar o mouse */
+    background-color: #049623; /* Fundo ao passar o mouse */
     color: #ffffff; /* Texto branco */
     transform: scale(1.1); /* Aumenta levemente */
 }
 
 /* Estilização do container de faixas */
 .faixas-container {
+    background-image: url('/images/fundomusic.jpg');
+
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;
@@ -63,13 +65,13 @@ nav a:hover {
     gap: 20px;
     justify-content: space-around;
     padding: 20px;
-    background-color: #000000;
+    background-color: #7c7c7c;
     margin-top: 20px;
 }
 
 /* Estilização da faixa-item */
 .faixa-item {
-    background-color: #1c1c1c;
+    background-color: #1c1c1c; 
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -96,7 +98,7 @@ nav a:hover {
 }
 
 .faixa-options button {
-    background-color: #FF4057;
+    background-color: #049623; /* Fundo ao passar o mouse */
     color: white;
     border: none;
     padding: 8px 15px;
@@ -108,7 +110,7 @@ nav a:hover {
 
 /* Efeito de hover nos botões */
 .faixa-options button:hover {
-    background-color: #d0334d;
+    background-color: #025815; /* Fundo ao passar o mouse */
 }
 
 /* Estilização dos ícones nos botões */

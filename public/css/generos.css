@@ -49,7 +49,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #FF4057;
+    background-color: #049623; /* Fundo ao passar o mouse */
     color: #ffffff;
     transform: scale(1.1);
 }
@@ -78,7 +78,7 @@ nav a:hover {
 }
 
 .add-genre-button:hover {
-    background-color: #d0334d;
+    background-color: #530e0e;
 }
 
 .genres-list {

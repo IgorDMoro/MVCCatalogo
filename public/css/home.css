@@ -16,21 +16,7 @@ body {
     justify-content: space-between;
 }
 
-.disco img {
-    display: block; /* Remove o espaçamento inferior da imagem */
-    width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    object-fit: contain; /* Garante que a imagem se ajuste sem distorcer */
-    animation: rodando 3s infinite linear; /* Efeito de rotação */
-}
-@keyframes rodando {
-    from {
-        transform: rotate(0deg); /* Inicia na posição original */
-    }
-    to {
-        transform: rotate(360deg); /* Finaliza com 360 graus */
-    }
-}
+
 
 /* Cabeçalho */
 header {
@@ -45,6 +31,22 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+.disco img {
+    display: block; /* Remove o espaçamento inferior da imagem */
+    width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain; /* Garante que a imagem se ajuste sem distorcer */
+    animation: rodando 3s infinite linear; /* Efeito de rotação */
+}
+@keyframes rodando {
+    from {
+        transform: rotate(0deg); /* Inicia na posição original */
+    }
+    to {
+        transform: rotate(360deg); /* Finaliza com 360 graus */
+    }
 }
 
 .disco {
@@ -73,4 +75,10 @@ nav a:hover {
     background-color: #049623; /* Fundo ao passar o mouse */
     color: #ffffff; /* Texto branco */
     transform: scale(1.1); /* Aumenta levemente */
+}
+
+footer{
+    background-color: #3a3939;
+    border-bottom: 2px solid #049623;
+
 }
