@@ -18,6 +18,7 @@ body {
 
 /* Cabeçalho */
 header {
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,7 +50,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #FF4057; /* Fundo ao passar o mouse */
+    background-color: #049623; /* Fundo ao passar o mouse */
     color: #ffffff; /* Texto branco */
     transform: scale(1.1); /* Aumenta levemente */
 }
@@ -60,7 +61,7 @@ nav a:hover {
     align-items: center;
     background-color: #1c1c1c; /* Fundo escuro */
     color: #ffffff;
-    border: 2px solid #FF4057;
+    border: 2px solid #049623;
     border-radius: 10px;
     padding: 20px;
     margin: 20px auto;
@@ -73,7 +74,7 @@ nav a:hover {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #FF4057;
+    border: 3px solid #025815;
 }
 
 .artista-container .dados {
@@ -83,7 +84,7 @@ nav a:hover {
 .artista-container .dados h2 {
     margin-bottom: 10px;
     font-size: 1.8rem;
-    color: #FF4057;
+    color: #049623;
 }
 
 .artista-container .dados p {
@@ -95,7 +96,7 @@ nav a:hover {
     margin-top: 20px;
     background-color: #1c1c1c; /* Fundo escuro */
     color: #ffffff;
-    border: 2px solid #FF4057;
+    border: 2px solid #049623;
     border-radius: 10px;
     padding: 20px;
     max-width: 800px;
@@ -105,7 +106,7 @@ nav a:hover {
 
 .discos-container h3 {
     font-size: 1.5rem;
-    color: #FF4057;
+    color: #049623;
     margin-bottom: 15px;
 }
 
@@ -125,7 +126,7 @@ nav a:hover {
 }
 
 .disco-name {
-    background-color: #FF4057;
+    background-color: #049623;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -134,5 +135,5 @@ nav a:hover {
 }
 
 .disco-name:hover {
-    background-color: #e63946;
+    background-color: #025815;
 }

@@ -19,6 +19,7 @@ body {
 /* Cabeçalho */
 header {
     display: flex;
+    border-radius: 10px;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -48,7 +49,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #FF4057; /* Fundo ao passar o mouse */
+    background-color: #049623; /* Fundo ao passar o mouse */
     color: #ffffff; /* Texto branco */
     transform: scale(1.1); /* Aumenta levemente */
 }
@@ -72,7 +73,7 @@ nav a:hover {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #FF4057;
+    border: 3px solid #049623;
 }
 
 .dados {
@@ -114,6 +115,6 @@ ul li {
 }
 
 ul li:hover {
-    background-color: #FF4057;
+    background-color: #049623;
     color: white;
 }

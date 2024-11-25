@@ -19,6 +19,7 @@ body {
 /* Cabeçalho */
 header {
     display: flex;
+    border-radius: 10px;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -66,7 +67,7 @@ nav a:hover {
 
 /* Botão para adicionar disco */
 .add-disco-button {
-    background-color: #FF4057;
+    background-color: #049623;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -77,7 +78,7 @@ nav a:hover {
 }
 
 .add-disco-button:hover {
-    background-color: #530e0e;
+    background-color: #025815;
 }
 
 /* Lista de discos */
@@ -117,7 +118,7 @@ nav a:hover {
 }
 
 .disco-name:hover {
-    color: #FF4057;
+    color: #049623;
 }
 
 /* Botões de editar e excluir */
@@ -147,7 +148,7 @@ nav a:hover {
 .linked-artist {
     background-color: #1c1c1c; /* Mesma cor de fundo do disco */
     color: white;
-    border: 2px solid #FF4057;
+    border: 2px solid #049623;
     border-radius: 8px;
     padding: 5px 10px;
     cursor: pointer;
@@ -156,7 +157,7 @@ nav a:hover {
 }
 
 .linked-artist:hover {
-    color: #FF4057;
+    color: #025815;
     background-color: #333333;
 }
 

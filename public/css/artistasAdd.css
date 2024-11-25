@@ -18,6 +18,7 @@ body {
 
 /* Cabeçalho */
 header {
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #FF4057; /* Fundo ao passar o mouse */
+    background-color: #049623; /* Fundo ao passar o mouse */
     color: #ffffff; /* Texto branco */
     transform: scale(1.1); /* Aumenta levemente */
 }
@@ -88,9 +89,9 @@ label {
 input[type="text"], input[type="file"] {
     padding: 10px;
     font-size: 1em;
-    border: 2px solid #FF4057;
+    border: 2px solid #025815;
     border-radius: 5px;
-    background-color: #333333;
+    background-color: #505050;
     color: white;
     transition: border-color 0.3s ease;
 }
@@ -100,7 +101,7 @@ input[type="text"]:focus, input[type="file"]:focus {
 }
 
 .submit-btn {
-    background-color: #FF4057;
+    background-color: #049623;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -111,12 +112,12 @@ input[type="text"]:focus, input[type="file"]:focus {
 }
 
 .submit-btn:hover {
-    background-color: #d0334d;
+    background-color: #025815;
 }
 
 /* Estilo para as caixas de seleção (checkboxes) */
 input[type="checkbox"] {
-    accent-color: #FF4057; /* Cor do botão de seleção (marca) */
+    accent-color: #025815; /* Cor do botão de seleção (marca) */
     margin-left: 10px;
     margin-right: 10px;
     transform: scale(1.2); /* Aumenta o tamanho da checkbox */
@@ -156,7 +157,7 @@ input[type="checkbox"]:hover + label {
 
 /* Ajustando o link "Adicionar Gênero" */
 .form-container a {
-    color:#FF4057;
+    color:#049623;
     font-size: 1em;
     text-align: center;
     display: block;
@@ -165,6 +166,6 @@ input[type="checkbox"]:hover + label {
 }
 
 .form-container a:hover {
-    color: #d0334d;
+    color: #025815;
 }
 

@@ -20,7 +20,9 @@ body {
 
 /* Cabeçalho */
 header {
+    border-radius: 10px;
     display: flex;
+    border-radius: 10px;
     justify-content: space-between;
     align-items: center;
     width: 100%;

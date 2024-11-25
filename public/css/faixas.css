@@ -18,6 +18,7 @@ body {
 
 /* Cabeçalho */
 header {
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -123,7 +124,7 @@ nav a:hover {
     font-size: 14px;
     background: none;
     color: white;
-    border: #d0334d;
+    border: #025815;
     cursor: pointer;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -132,6 +133,6 @@ nav a:hover {
 
 /* Efeito de hover nos botões de disco */
 .disco-button:hover {
-    color: #FF4057;
+    color: #025815;
 }
 

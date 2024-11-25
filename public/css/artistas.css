@@ -19,6 +19,7 @@ body {
 /* Cabeçalho */
 header {
     display: flex;
+    border-radius: 10px;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -67,7 +68,7 @@ nav a:hover {
 
 /* Botão para adicionar artista */
 .add-artist-button {
-    background-color: #FF4057;
+    background-color: #049623;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -78,7 +79,7 @@ nav a:hover {
 }
 
 .add-artist-button:hover {
-    background-color: #530e0e;
+    background-color: #025815;
 }
 
 /* Lista de artistas */
@@ -118,7 +119,7 @@ nav a:hover {
 }
 
 .artist-name:hover {
-    color: #FF4057;
+    color: #049623;
 }
 
 /* Botões de editar e excluir */
@@ -145,12 +146,11 @@ nav a:hover {
 }
 
 .voltas:hover{
-    background-color: #530e0e;
+    background-color: #025815;
 
 }
 .voltas{
-    background-color: #FF4057;
-    background-color: #FF4057;
+    background-color: #049623;
     color: white;
     padding: 10px 10px;
     font-size: 1em;

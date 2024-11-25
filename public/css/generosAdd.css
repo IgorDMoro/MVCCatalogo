@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Gugi', sans-serif;
-    background-color: #000000; /* Fundo preto */
+    background-color: #444; /* Fundo preto */
     color: #ffffff; /* Texto branco */
     display: flex;
     flex-direction: column;
@@ -19,6 +19,7 @@ body {
 
 /* Cabeçalho */
 header {
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,7 +27,7 @@ header {
     max-width: 1200px;
     padding: 15px 30px;
     background-color: #1c1c1c; /* Fundo do cabeçalho */
-    border-bottom: 2px solid #FF4057;
+    border-bottom: 2px solid #049623;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -49,7 +50,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #FF4057; /* Fundo ao passar o mouse */
+    background-color: #049623; /* Fundo ao passar o mouse */
     color: #ffffff; /* Texto branco */
     transform: scale(1.1); /* Aumenta levemente */
 }
@@ -59,7 +60,7 @@ nav a:hover {
     margin: 0 auto;
     padding: 20px;
     background-color: #1c1c1c;
-    border: 1px solid #FF4057;
+    border: 1px solid #025815;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -84,7 +85,7 @@ nav a:hover {
 
 .form-container button {
     padding: 10px 15px;
-    background-color: #FF4057;
+    background-color: #049623;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -95,7 +96,7 @@ nav a:hover {
 }
 
 .form-container button:hover {
-    background-color: #d0334d;
+    background-color: #025815;
 }
 
 

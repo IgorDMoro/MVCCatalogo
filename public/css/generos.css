@@ -18,6 +18,7 @@ body {
 
 /* Cabeçalho */
 header {
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,7 +68,7 @@ nav a:hover {
 
 /* Botão para adicionar gênero */
 .add-genre-button {
-    background-color: #FF4057;
+    background-color: #049623;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -78,7 +79,7 @@ nav a:hover {
 }
 
 .add-genre-button:hover {
-    background-color: #530e0e;
+    background-color: #025815;
 }
 
 .genres-list {
@@ -121,7 +122,7 @@ nav a:hover {
 }
 
 .genre-name:hover {
-    color: #FF4057;
+    color: #049623;
 }
 
 /* Botões de editar e excluir */
