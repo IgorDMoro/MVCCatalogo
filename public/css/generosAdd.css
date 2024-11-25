@@ -100,3 +100,17 @@ nav a:hover {
 }
 
 
+.voltas:hover{
+    background-color: #025815;
+
+}
+.voltas{
+    background-color: #049623;
+    color: white;
+    padding: 10px 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
+}
