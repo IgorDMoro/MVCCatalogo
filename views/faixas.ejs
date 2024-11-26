@@ -17,49 +17,61 @@
             <a href="/generos"><i class="fas fa-tags"></i> Generos</a>
         </nav>
     </header>
-
+    <!-- Formulário para adicionar nova faixa -->
+<form action="/faixas/sem-disco" method="POST">
+  <label for="titulo">Título da Faixa:</label>
+  <input type="text" id="titulo" name="titulo" required>
+  <button type="submit">Adicionar Faixa</button>
+</form>
+  
     <div class="faixas-container">
-        <% if (faixas && faixas.length > 0) { %>
-          <% faixas.forEach(function(faixa) { %>
-            <div class="faixa-item">
-              <h3 class="faixa-titulo"><%= faixa.titulo %></h3>
+      <% if (faixas && faixas.length > 0) { %>
+        <% faixas.forEach(function(faixa) { %>
+          <div class="faixa-item">
+            <h3 class="faixa-titulo"><%= faixa.titulo %></h3>
+            
+
+            <!-- Exibir os gêneros associados à faixa -->
+            <% if (faixa.Generos && faixa.Generos.length > 0) { %>
+              <% faixa.Generos.forEach(function(genero) { %>
+                <p><%= genero.nome %></p> <!-- Nome do gênero -->
+              <% }) %>
+            <% } else { %>
+              <p>Nenhum gênero associado</p>
+            <% } %>
+    
+            <!-- Exibir o nome do disco vinculado -->
+            <% if (faixa.Disco) { %>
+              <button class="disco-button linked-disco" onclick="window.location.href='/discos/<%= faixa.Disco.id %>'">
+                Disco: <%= faixa.Disco.titulo %> 
+              </button>
+            <% } else { %>
+              <button class="disco-button link-disco" onclick="window.location.href='/vincular-disco/<%= faixa.id %>'">
+                Vincular disco
+              </button>
+            <% } %>
+    
+            <!-- Opções de editar e excluir faixa -->
+            <div class="faixa-options">
+              
+              <button class="edit-faixa" onclick="window.location.href='faixas/<%= faixa.id %>/edit'">
+                <i class="fas fa-edit"></i> Editar
+              </button>
       
-              <!-- Exibir os gêneros associados à faixa -->
-              <% if (faixa.Generos && faixa.Generos.length > 0) { %>
-                <% faixa.Generos.forEach(function(genero) { %>
-                  <p><%= genero.nome %></p> <!-- Nome do gênero -->
-                <% }) %>
-              <% } else { %>
-                <p>Nenhum gênero associado</p>
-              <% } %>
-      
-              <!-- Exibir o nome do disco vinculado -->
-              <% if (faixa.Disco) { %>
-                <button class="disco-button linked-disco" onclick="window.location.href='/discos/<%= faixa.Disco.id %>'">
-                  Disco: <%= faixa.Disco.titulo %> 
+              <form action="/faixas/<%= faixa.id %>" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir esta faixa?');">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="delete-faixa">
+                    <i class="fas fa-trash"></i> Excluir
                 </button>
-              <% } else { %>
-                <button class="disco-button link-disco" onclick="window.location.href='/vincular-disco/<%= faixa.id %>'">
-                  Vincular disco
-                </button>
-              <% } %>
-      
-              <!-- Opções de editar e excluir faixa -->
-              <div class="faixa-options">
-                <button class="edit-faixa" onclick="window.location.href='faixas/<%= faixa.id %>/edit'">
-                  <i class="fas fa-edit"></i> Editar
-                </button>
-                <form action="/faixas/<%= faixa.id %>?_method=DELETE" method="POST" class="delete-faixa-form">
-                  <button type="submit" class="faixa-artist">
-                      <i class="fas fa-trash"></i> Excluir
-                  </button>
-              </div>
+              </form>
+
             </div>
-          <% }) %>
-        <% } else { %>
-          <p>Nenhuma faixa encontrada</p>
-        <% } %>
-      </div>         
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>Nenhuma faixa encontrada</p>
+      <% } %>
+    </div>         
       <footer>
         <a href="/" class="voltas"
             ><i class="volta"></i> Voltar ao Menu Inicial</a

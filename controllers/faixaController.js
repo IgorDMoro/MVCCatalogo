@@ -49,6 +49,22 @@ const renderAddFaixaForm = (req, res) => {
     res.render('faixas/new');
 };
 
+// Adicionar uma nova faixa sem disco vinculado
+const addFaixaSemDisco = async (req, res) => {
+    try {
+        const { titulo } = req.body; // Obtém o título da faixa do formulário
+        
+        // Cria uma nova faixa sem vinculação de disco
+        await Faixa.create({ titulo });
+
+        // Após criar a faixa, redireciona para a lista de faixas
+        res.redirect('/faixas');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Erro ao adicionar faixa');
+    }
+};
+
 // Adicionar um novo faixa
 const addFaixa = async (req, res) => {
     try {
@@ -60,6 +76,45 @@ const addFaixa = async (req, res) => {
     }
 };
 
+
+
+const renderVincularDiscoForm = async (req, res) => {
+    try {
+        const faixa = await Faixa.findByPk(req.params.id);
+        const discos = await Disco.findAll(); // Lista todos os discos disponíveis
+        if (faixa) {
+            res.render('vincularDisco', { faixa, discos });
+        } else {
+            res.status(404).send('Faixa não encontrada');
+        }
+    } catch (error) {
+        console.error('Erro ao carregar formulário de vinculação:', error);
+        res.status(500).send('Erro ao carregar formulário de vinculação');
+    }
+};
+
+const vincularDisco = async (req, res) => {
+    try {
+        const faixaId = req.params.id;
+        const { discoId } = req.body; // ID do disco enviado pelo formulário
+
+        const faixa = await Faixa.findByPk(faixaId);
+        if (!faixa) {
+            return res.status(404).send('Faixa não encontrada');
+        }
+
+        // Atualiza o ID do disco associado à faixa
+        await faixa.update({ discoId });
+
+        res.redirect('/faixas'); // Redireciona de volta para a lista de faixas
+    } catch (error) {
+        console.error('Erro ao vincular disco:', error);
+        res.status(500).send('Erro ao vincular disco');
+    }
+};
+
+
+// Exibir formulário para edição de faixa
 const renderEditFaixaForm = async (req, res) => {
     try {
         const faixa = await Faixa.findByPk(req.params.id);
@@ -103,16 +158,29 @@ const updateFaixa = async (req, res) => {
     return res.status(405).send('Método não permitido');
 };
 
+
 // Deletar um faixa
 const deleteFaixa = async (req, res) => {
-    try {
-        await Faixa.destroy({
-            where: { id: req.params.id }
-        });
-        res.redirect('/faixas');
-    } catch (error) {
-        res.status(500).send('Erro ao deletar faixa');
+    const method = req.body._method;
+
+    if (method === 'DELETE') {
+        try {
+            const faixaId = req.params.id;
+            const faixa = await Faixa.findByPk(faixaId);
+
+            if (!faixa) {
+                return res.status(404).send('Faixa não encontrada');
+            }
+
+            await faixa.destroy();
+            return res.redirect('/faixas');
+        } catch (error) {
+            console.error(error);
+            return res.status(500).send('Erro ao excluir a faixa');
+        }
     }
+
+    return res.status(405).send('Método não permitido');
 };
 
 module.exports = {
@@ -123,4 +191,7 @@ module.exports = {
     renderEditFaixaForm,
     updateFaixa,
     deleteFaixa,
+    renderVincularDiscoForm,
+    vincularDisco,
+    addFaixaSemDisco
 };
