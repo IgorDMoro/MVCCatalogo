@@ -1,4 +1,6 @@
 const { Artista, Disco, Genero, ArtistaGenero, sequelize } = require('../models');
+const path = require('path');
+
 
 // Listar todos os artistas
 const getAllArtistas = async (req, res) => {

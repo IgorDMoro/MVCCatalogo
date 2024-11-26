@@ -1,4 +1,5 @@
 const { Disco, Faixa, Artista, Genero, FaixaGenero, sequelize } = require('../models');
+const path = require('path');
 
 // Listar todos os discos
 const getAllDiscos = async (req, res) => {

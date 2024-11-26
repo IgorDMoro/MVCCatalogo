@@ -55,6 +55,7 @@ nav a:hover {
     transform: scale(1.1); /* Aumenta levemente */
 }
 
+
 /* Formulário de Edição */
 .edit-disco-container {
     max-width: 500px;
@@ -106,6 +107,9 @@ nav a:hover {
     margin-bottom: 20px; /* Adiciona um espaço abaixo do botão de salvar */
 }
 
+input[type="file" i] {
+color: aqua;
+}
 
 /* Estilo do botão de voltar/cancelar */
 .voltas:hover {
