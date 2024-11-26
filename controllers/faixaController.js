@@ -49,21 +49,6 @@ const renderAddFaixaForm = (req, res) => {
     res.render('faixas/new');
 };
 
-// Adicionar uma nova faixa sem disco vinculado
-const addFaixaSemDisco = async (req, res) => {
-    try {
-        const { titulo } = req.body; // Obtém o título da faixa do formulário
-        
-        // Cria uma nova faixa sem vinculação de disco
-        await Faixa.create({ titulo });
-
-        // Após criar a faixa, redireciona para a lista de faixas
-        res.redirect('/faixas');
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Erro ao adicionar faixa');
-    }
-};
 
 // Adicionar um novo faixa
 const addFaixa = async (req, res) => {
@@ -193,5 +178,4 @@ module.exports = {
     deleteFaixa,
     renderVincularDiscoForm,
     vincularDisco,
-    addFaixaSemDisco
 };

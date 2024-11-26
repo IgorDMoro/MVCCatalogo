@@ -17,13 +17,7 @@
             <a href="/generos"><i class="fas fa-tags"></i> Generos</a>
         </nav>
     </header>
-    <!-- Formulário para adicionar nova faixa -->
-<form action="/faixas/sem-disco" method="POST">
-  <label for="titulo">Título da Faixa:</label>
-  <input type="text" id="titulo" name="titulo" required>
-  <button type="submit">Adicionar Faixa</button>
-</form>
-  
+
     <div class="faixas-container">
       <% if (faixas && faixas.length > 0) { %>
         <% faixas.forEach(function(faixa) { %>

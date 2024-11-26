@@ -6,9 +6,6 @@ const faixaController = require('../controllers/faixaController');
 // Rota para listar todos os faixas
 router.get('/', faixaController.getAllFaixas);
 
-// Rota para adicionar uma nova faixa sem disco vinculado
-router.post('/sem-disco', faixaController.addFaixaSemDisco);
-
 // Rota para criar um novo faixa
 router.post('/', faixaController.addFaixa);
 

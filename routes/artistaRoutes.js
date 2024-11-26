@@ -18,10 +18,13 @@ router.get('/:id', artistaController.getArtistaById);
 // Rota para exibir o formulário de edição de um artista específico
 router.get('/:id/edit', artistaController.renderEditArtistaForm);
 
-// Rota para atualizar um artista
-router.put('/:id', artistaController.updateArtista);
+// Rota para atualizar nome e nacionalidade do artista
+router.post('/:id/edit/dados', artistaController.updateDadosArtista);
+
+// Rota para atualizar a foto do artista
+router.post('/:id/edit/foto', upload.single('foto'), artistaController.updateFotoArtista);
 
 // Rota para deletar um artista
-router.delete('/:id', artistaController.deleteArtista);
+router.post('/:id', artistaController.deleteArtista);
 
 module.exports = router;

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar <%= artista.nome %></title>
+    <link rel="stylesheet" href="/css/artistasEdit.css">
+</head>
+<body>
+    <header>
+
+        <nav>
+            <a href="/artistas"><i class="fa-solid fa-user"></i> Artistas</a>
+            <a href="/discos"><i class="fas fa-record-vinyl"></i> Discos</a>
+            <a href="/faixas"><i class="fas fa-music"></i> Faixas</a>
+            <a href="/generos"><i class="fas fa-tags"></i> Generos</a>
+        </nav>
+    </header>
+
+    <div class="edit-artista-container">
+        <!-- Container para editar os dados do artista -->
+        <div class="artista-dados">
+            <h2>Editando: <%= artista.nome %></h2>
+            <form id="artista-dados-form" method="POST" action="/artistas/<%= artista.id %>/edit/dados">
+                <input type="hidden" name="_method" value="PUT">
+    
+                <div class="form-group">
+                    <label for="nome">Nome do Artista:</label>
+                    <input type="text" id="nome" name="nome" value="<%= artista.nome %>" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="nacionalidade">Nacionalidade:</label>
+                    <input type="text" id="nacionalidade" name="nacionalidade" value="<%= artista.nacionalidade %>" required>
+                </div>
+    
+                <button type="submit" class="submit-button">Salvar Alterações</button>
+            </form>
+        </div>
+    
+        <!-- Container para substituir a foto do artista -->
+        <div class="artista-foto">
+            <h2>Foto</h2>
+            <img src="/<%= artista.foto %>" alt="Foto do Artista" width="200">
+            <form action="/artistas/<%= artista.id %>/edit/foto" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="PUT">
+                <label for="foto">Escolher nova foto:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" required>
+                <button type="submit" class="confirm-edit-button">Substituir Foto</button>
+            </form>
+        </div>
+    </div>  
+
+
+</html>

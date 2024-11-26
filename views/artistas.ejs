@@ -18,46 +18,31 @@
     </header>
 
     <div class="artists-container">
-      <a href="/artistas/add" class="add-artist-button"
-        ><i class="fas fa-plus-circle"></i> Adicionar Artista</a
-      >
-
-      <% if (error) { %>
-      <div class="error-message">
-        <p><%= error %></p>
-      </div>
-      <% } %>
-
+      <a href="/artistas/add" class="add-artist-button"><i class="fas fa-plus-circle"></i> Adicionar Artista</a>
+          
       <div class="artists-list">
-        <% artistas.forEach(function(artista) { %>
-        <div class="artist-item">
-          <button
-            class="artist-name"
-            onclick="window.location.href='/artistas/<%= artista.id %>'"
-          >
-            <%= artista.nome %>
-          </button>
-          <div class="artist-options">
-            <button
-              class="edit-artist"
-              onclick="window.location.href='/editar-artista/<%= artista.id %>'"
-            >
-              <i class="fas fa-edit"></i> Editar
-            </button>
-            <form
-              action="/artistas/<%= artista.id %>?_method=DELETE"
-              method="POST"
-              class="delete-artist-form"
-            >
-              <button type="submit" class="delete-artist">
-                <i class="fas fa-trash"></i> Excluir
-              </button>
-            </form>
-          </div>
-        </div>
-        <% }) %>
+          <% artistas.forEach(function(artista) { %>
+              <div class="artist-item">
+                  <button class="artist-name" onclick="window.location.href='/artistas/<%= artista.id %>'">
+                      <%= artista.nome %>
+                  </button>
+                  <div class="artist-options">
+                      <button class="edit-artist" onclick="window.location.href='/artistas/<%= artista.id %>/edit'">
+                          <i class="fas fa-edit"></i> Editar
+                      </button>
+
+                      <form action="/artistas/<%= artista.id %>" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este artista?');">
+                          <input type="hidden" name="_method" value="DELETE">
+                          <button type="submit" class="delete-artist">
+                              <i class="fas fa-trash"></i> Excluir
+                          </button>
+                      </form>  
+
+                  </div>
+              </div>
+          <% }) %>
       </div>
-    </div>
+  </div>
     <footer>
     <a href="/" class="voltas"
         ><i class="volta"></i> Voltar ao Menu Inicial</a
