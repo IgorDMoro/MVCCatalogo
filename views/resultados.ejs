@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Busca</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><img src="\images\logoatt.png" alt="logo"></div>
+            <a href="/"><i class="homepage"></i> Home</a>
+            <a href="/artistas"><i class="fa-solid fa-user"></i> Artistas</a>
+            <a href="/discos"><i class="fas fa-record-vinyl"></i> Discos</a>
+            <a href="/faixas"><i class="fas fa-music"></i> Faixas</a>
+            <a href="/generos"><i class="fas fa-tags"></i> Generos</a>
+        </nav>
+    </header>
+
+    <h2>Resultados para: "<%= query %>"</h2>
+
+    <h3>Discos</h3>
+    <ul>
+        <% discos.forEach(disco => { %>
+            <li><a href="/discos/<%= disco.id %>"><%= disco.titulo %></a></li>
+        <% }) %>
+    </ul>
+
+    <h3>Artistas</h3>
+    <ul>
+        <% artistas.forEach(artista => { %>
+            <li><a href="/artistas/<%= artista.id %>"><%= artista.nome %></a></li>
+        <% }) %>
+    </ul>
+
+    <h3>Gêneros</h3>
+    <ul>
+        <% generos.forEach(genero => { %>
+            <li><a href="/generos/<%= genero.id %>"><%= genero.nome %></a></li>
+        <% }) %>
+    </ul>
+
+    <footer>
+        <nav>
+            <a href="/artistas"><i class="fa-solid fa-user"></i> Artistas</a>
+            <a href="/discos"><i class="fas fa-record-vinyl"></i> Discos</a>
+            <a href="/faixas"><i class="fas fa-music"></i> Faixas</a>
+            <a href="/generos"><i class="fas fa-tags"></i> Generos</a>
+        </nav>
+    </footer>
+</body>
+</html>

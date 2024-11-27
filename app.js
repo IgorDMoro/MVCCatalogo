@@ -22,6 +22,7 @@ const discoRoutes = require('./routes/discoRoutes');
 const faixaRoutes = require('./routes/faixaRoutes');
 const generoRoutes = require('./routes/generoRoutes');
 const vincularArtistaRoutes = require('./routes/vincularArtistaRoutes')
+const searchRoutes = require('./routes/searchRoutes');
 
 // Definindo as rotas principais
 app.use('/', homeRoutes);
@@ -30,6 +31,7 @@ app.use('/discos', discoRoutes);
 app.use('/faixas', faixaRoutes);
 app.use('/generos', generoRoutes);
 app.use('/vincular-artista', vincularArtistaRoutes)
+app.use('/busca', searchRoutes);
 
 // Serve os arquivos estáticos do frontend (caso haja)
 app.use(express.static(path.join(__dirname, 'public')));
