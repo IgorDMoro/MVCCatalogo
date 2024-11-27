@@ -184,3 +184,8 @@ input[type="checkbox"]:hover + label {
     transition: background-color 0.3s ease;
     align-items: center;
 }
+.logo img {
+    height: 30px; /* Ajuste a altura conforme necessário */
+    object-fit: contain;
+    border-radius: 10px;
+}

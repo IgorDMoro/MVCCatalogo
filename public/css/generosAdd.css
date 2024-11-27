@@ -17,6 +17,12 @@ body {
     justify-content: space-between;
 }
 
+.logo img {
+    height: 30px; /* Ajuste a altura conforme necessário */
+    object-fit: contain;
+    border-radius: 10px;
+}
+
 /* Cabeçalho */
 header {
     border-radius: 10px;

@@ -4,6 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+.logo img {
+    height: 30px; /* Ajuste a altura conforme necessário */
+    object-fit: contain;
+    border-radius: 10px;
+}
 
 body {
     font-family: 'Gugi', sans-serif;
