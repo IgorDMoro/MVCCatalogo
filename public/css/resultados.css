@@ -1,0 +1,166 @@
+/* Configuração Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo img {
+    height: 30px; /* Ajuste a altura conforme necessário */
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+body {
+    background-color: #444444; /* Fundo preto */
+    color: #ffffff; /* Texto branco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+/* Cabeçalho */
+header {
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px 30px;
+    background-color: #3a3939; /* Fundo do cabeçalho */
+    border-bottom: 2px solid #049623;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Estilo para links no cabeçalho */
+header a {
+    color: #ffffff; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+header a:hover {
+    background-color: #049623; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.1); /* Aumenta levemente */
+}
+
+/* Estilo para os botões de links (na seção resultados) */
+.resultados a {
+    text-decoration: none; /* Remove sublinhado */
+    color: #ffffff; /* Cor do texto */
+    background-color: #049623; /* Cor de fundo do botão */
+    padding: 10px 20px; /* Tamanho do botão */
+    border-radius: 5px; /* Arredonda as bordas */
+    display: inline-block; /* Para ficar no formato de botão */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Mudança de cor no hover (passar o mouse sobre o botão) */
+.resultados a:hover {
+    background-color: #049623; /* Fundo verde claro */
+    transform: scale(1.1); /* Aumenta o botão */
+}
+
+/* Estilo para os botões (na seção de resultados) */
+.resultados button {
+    border-radius: 55px;
+    text-decoration: none;
+    font-size: 1.2em;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Efeito de hover para os botões */
+.resultados button:hover {
+    background-color: #049623;
+}
+
+/* Seção de resultados */
+.resultados {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: #1c1c1c; /* Fundo escuro */
+    color: #ffffff;
+    border: 2px solid #049623;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff; /* Cor do texto */
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #049623; /* Fundo ao passar o mouse */
+    color: #ffffff; /* Texto branco */
+    transform: scale(1.1); /* Aumenta levemente */
+}
+
+footer {
+    background-color: #3a3939;
+    border-bottom: 2px solid #049623;
+}
+
+/* Formulário de busca (no header) */
+header form {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+header button[type="submit"] {
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilo para botão de busca no header */
+header button[type="submit"]:hover {
+    background-color: #049623;
+}
+
+/* Ajuste no estilo de links dentro do botão de busca */
+header a:visited {
+    color: #ffffff;
+    background-color: #049623;
+}

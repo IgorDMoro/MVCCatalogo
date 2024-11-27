@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados da Busca</title>
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/resultados.css">
 </head>
 <body>
     <header>
@@ -15,32 +15,47 @@
             <a href="/discos"><i class="fas fa-record-vinyl"></i> Discos</a>
             <a href="/faixas"><i class="fas fa-music"></i> Faixas</a>
             <a href="/generos"><i class="fas fa-tags"></i> Generos</a>
+            <!-- Formulário de busca -->
+            <form action="/busca" method="get" style="display: inline-block; margin-left: 20px;">
+                <input 
+                    type="text" 
+                    name="q" 
+                    placeholder="Buscar por título, artista ou gênero" 
+                    style="padding: 5px; border: 1px solid #ccc; border-radius: 4px;"
+                >
+                <button 
+                    type="submit" 
+                    style="padding: 5px 10px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer;"
+                >
+                    Buscar
+                </button>
+            </form>
         </nav>
     </header>
 
     <h2>Resultados para: "<%= query %>"</h2>
-
+<div class="resultados">
     <h3>Discos</h3>
-    <ul>
+    <button>
         <% discos.forEach(disco => { %>
-            <li><a href="/discos/<%= disco.id %>"><%= disco.titulo %></a></li>
+            <a href="/discos/<%= disco.id %>"><%= disco.titulo %></a>
         <% }) %>
-    </ul>
+    </button>
 
     <h3>Artistas</h3>
-    <ul>
+    <button>
         <% artistas.forEach(artista => { %>
-            <li><a href="/artistas/<%= artista.id %>"><%= artista.nome %></a></li>
+            <a href="/artistas/<%= artista.id %>"><%= artista.nome %></a>
         <% }) %>
-    </ul>
+    </button>
 
     <h3>Gêneros</h3>
-    <ul>
+    <button>
         <% generos.forEach(genero => { %>
-            <li><a href="/generos/<%= genero.id %>"><%= genero.nome %></a></li>
+            <a href="/generos/<%= genero.id %>"><%= genero.nome %></a><
         <% }) %>
-    </ul>
-
+    </button>
+</div>
     <footer>
         <nav>
             <a href="/artistas"><i class="fa-solid fa-user"></i> Artistas</a>
