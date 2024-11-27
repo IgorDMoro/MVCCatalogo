@@ -58,7 +58,7 @@ nav a:hover {
 /* Estilização do container de faixas */
 .faixas-container {
     background-image: url('/images/fundomusic.jpg');
-
+    border-radius: 4%;
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;
@@ -68,6 +68,8 @@ nav a:hover {
     padding: 20px;
     background-color: #7c7c7c;
     margin-top: 20px;
+    margin-bottom: 20px;
+
 }
 
 /* Estilização da faixa-item */
@@ -141,6 +143,7 @@ nav a:hover {
 
 }
 .voltas{
+    text-decoration: none;
     background-color: #049623;
     color: white;
     padding: 10px 10px;

@@ -17,7 +17,7 @@
             <a href="/generos"><i class="fas fa-tags"></i> Generos</a>
         </nav>
     </header>
-
+<div class="form-add">
     <form action="/discos/add" method="POST" enctype="multipart/form-data">
       <label for="titulo">Título do Disco</label>
       <input type="text" id="titulo" name="titulo" required>
@@ -48,7 +48,7 @@
       <button type="button" onclick="addFaixa()">Adicionar Faixa</button>
       <button type="submit">Adicionar Disco</button>
     </form>
-    
+  </div>
     <script>
       function addFaixa() {
         const faixasContainer = document.getElementById('faixas');

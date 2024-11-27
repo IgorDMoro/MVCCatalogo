@@ -124,6 +124,7 @@ ul li:hover {
 
 }
 .voltas{
+    text-decoration: none; /* Remove o sublinhado */
     background-color: #049623;
     color: white;
     padding: 10px 10px;

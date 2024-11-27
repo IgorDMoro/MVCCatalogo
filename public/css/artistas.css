@@ -68,6 +68,7 @@ nav a:hover {
 
 /* Botão para adicionar artista */
 .add-artist-button {
+    text-decoration: none; /* Remove o sublinhado */
     background-color: #049623;
     color: white;
     border: none;
@@ -150,6 +151,7 @@ nav a:hover {
 
 }
 .voltas{
+    text-decoration: none; /* Remove o sublinhado */
     background-color: #049623;
     color: white;
     padding: 10px 10px;

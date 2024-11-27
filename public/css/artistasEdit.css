@@ -75,13 +75,17 @@ nav a:hover {
 .edit-artista-container label {
     font-weight: bold;
     color: #ffffff;
+    
 }
 
 .edit-artista-container input[type="text"]{
     padding: 10px;
-    border: 1px solid #ced4da;
+    border: 1px solid #025815;
     border-radius: 4px;
     font-size: 16px;
+    background-color: #4b4b4b;
+    color: #ffffff;
+    
 }
 
 .edit-artista-container input[type="number"]{
@@ -95,6 +99,7 @@ nav a:hover {
 /* Estilo do botão de salvar */
 .edit-artista-container button {
     padding: 10px 15px;
+    border: 1px solid #025815;
     background-color: #049623;
     color: white;
     font-size: 16px;
@@ -118,6 +123,7 @@ nav a:hover {
 
 .voltas,
 .cancel-edit-button {
+    text-decoration: none; /* Remove o sublinhado */
     background-color: #049623;
     color: white;
     padding: 10px 10px;

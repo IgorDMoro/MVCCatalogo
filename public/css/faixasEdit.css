@@ -55,6 +55,8 @@ nav a:hover {
     transform: scale(1.1); /* Aumenta levemente */
 }
 
+
+
 /* Formulário de Edição */
 .edit-track-container {
     max-width: 500px;
@@ -71,6 +73,8 @@ nav a:hover {
     flex-direction: column;
     gap: 15px;
 }
+
+
 
 .edit-track-container label {
     font-weight: bold;
@@ -98,9 +102,6 @@ nav a:hover {
     margin-bottom: 20px; /* Adiciona um espaço abaixo do botão de salvar */
 }
 
-.edit-track-container:hover {
-    background-color: #025815;
-}
 
 /* Estilo do botão de voltar/cancelar */
 .voltas:hover {
@@ -109,6 +110,8 @@ nav a:hover {
 
 .voltas,
 .cancel-edit-button {
+    text-align: center;
+    text-decoration: none;
     background-color: #049623;
     color: white;
     padding: 10px 10px;
