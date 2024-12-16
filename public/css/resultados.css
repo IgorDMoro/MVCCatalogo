@@ -6,10 +6,24 @@
 }
 
 .logo img {
-    height: 30px; /* Ajuste a altura conforme necessário */
+    height: 35px; /* Ajuste a altura conforme necessário */
     object-fit: contain;
     border-radius: 10px;
+    border-radius: 2px;
+    border-radius: 10px;
+    border: 2px solid #049623;
 }
+.imagem-link {
+    cursor: pointer; /* Mudando o cursor para indicar que é clicável */
+    transition: transform 0.3s ease; /* Efeito suave de transição */
+  }
+
+  /* Efeito de hover - aumentar a imagem */
+  .imagem-link:hover {
+    border-radius: 10px;
+    border: 2px solid #049623;
+    transform: scale(1.2); /* Aumenta a imagem em 20% */
+  }
 
 body {
     background-color: #444444; /* Fundo preto */
