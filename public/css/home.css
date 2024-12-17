@@ -112,3 +112,7 @@ footer{
 
 }
 
+footer:hover{
+    border-bottom: 2px solid #013f0e;
+
+}
