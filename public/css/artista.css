@@ -145,6 +145,21 @@ nav a:hover {
     gap: 15px;
 }
 
+.add-disco-button {
+    text-decoration: none; /* Remove o sublinhado */
+    background-color: #049623;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-disco-button:hover {
+    background-color: #025815;
+}
 .disco-item {
     background-color: #2e2e2e;
     padding: 15px;
