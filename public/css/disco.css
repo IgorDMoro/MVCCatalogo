@@ -65,6 +65,7 @@ nav a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
+    margin-bottom: 30px;
     max-width: 600px;
 }
 
@@ -128,6 +129,7 @@ ul li:hover {
 
 }
 .voltas{
+    margin-bottom: 10px;
     text-decoration: none; /* Remove o sublinhado */
     background-color: #049623;
     color: white;
