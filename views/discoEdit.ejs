@@ -9,12 +9,17 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="\images\logoatt.png" alt="logo">
+                <img src="\images\logoatt.png" alt="logo" class="imagem-link" id="imagem-link">
             </div>
+            <script>
+                document.getElementById('imagem-link').addEventListener('click', function(){
+                  window.location.href="/";
+                });
+              </script>
             <a href="/artistas"><i class="fa-solid fa-user"></i> Artistas</a>
             <a href="/discos"><i class="fas fa-record-vinyl"></i> Discos</a>
             <a href="/faixas"><i class="fas fa-music"></i> Faixas</a>
-            <a href="/generos"><i class="fas fa-tags"></i> Generos</a>
+            <a href="/generos"><i class="fas fa-tags"></i> Gêneros</a>
             <!-- Formulário de busca -->
             <form action="/busca" method="get" style="display: inline-block; margin-left: 20px;">
                 <input 

@@ -17,7 +17,7 @@ const getGeneroById = async (req, res) => {
     try {
         const genero = await Genero.findByPk(req.params.id);
         if (genero) {
-            res.render('generos/show', { genero });
+            res.render('generos', { generos });
         } else {
             res.status(404).send('Genero não encontrado');
         }
