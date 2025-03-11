@@ -47,14 +47,16 @@
             <a href="/discos/<%= disco.id %>"><%= disco.titulo %></a>
         <% }) %>
     </button>
-
+</div>
+<div class="resultados">
     <h3>Artistas</h3>
     <button>
         <% artistas.forEach(artista => { %>
             <a href="/artistas/<%= artista.id %>"><%= artista.nome %></a>
         <% }) %>
     </button>
-
+</div>
+<div class="resultados">
     <h3>Gêneros</h3>
     <button>
         <% generos.forEach(genero => { %>
