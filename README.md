@@ -21,8 +21,8 @@ Este é um sistema de **catálogo musical** desenvolvido em **Node.js** utilizan
 
 > - ![image](https://github.com/user-attachments/assets/baddec96-cff8-487a-9dfa-a92f6dd6ac3c)
 
-🚀 Funcionalidades
-Cadastro, edição e remoção de:
+## 🚀 Funcionalidades:
+# Cadastro, edição e remoção de:
 
 Artistas
 
