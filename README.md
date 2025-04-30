@@ -21,32 +21,26 @@ Este é um sistema de **catálogo musical** desenvolvido em **Node.js** utilizan
 
 > - ![image](https://github.com/user-attachments/assets/baddec96-cff8-487a-9dfa-a92f6dd6ac3c)
 
-## 🚀 Funcionalidades:
-# Cadastro, edição e remoção de:
+## 🚀 Funcionalidades
 
-Artistas
+### 🛠️ Cadastro, edição e remoção de:
+- 🎤 **Artistas**
+- 💿 **Discos**
+- 🎶 **Faixas**
+- 🎼 **Gêneros musicais**
 
-Discos
+### 🔍 Funcionalidades Extras:
+- 📂 **Exibição de detalhes de artistas**, com seus discos e faixas associadas
+- 🧠 **Filtro de busca** por título, artista ou gênero
+- 🏠 **Página inicial** com menu de navegação e apresentação do projeto
 
-Faixas
+---
 
-Gêneros musicais
+## 🧱 Tecnologias Utilizadas
 
-Exibição de detalhes de artistas, com seus discos e faixas associadas
-
-Filtro de busca por título, artista ou gênero
-
-Página inicial com menu de navegação e apresentação do projeto
-
-🧱 Tecnologias Utilizadas
-Node.js
-
-Express
-
-Sequelize (ORM)
-
-PostgreSQL
-
-EJS (para renderização das views)
-
-HTML, CSS e Bootstrap
+- ⚙️ **Node.js**
+- 🚂 **Express**
+- 🧬 **Sequelize (ORM)**
+- 🐘 **PostgreSQL**
+- 🖼️ **EJS** (para renderização das views)
+- 🎨 **HTML, CSS e Bootstrap**
