@@ -2,9 +2,6 @@
 
 Este é um sistema de **catálogo musical** desenvolvido em **Node.js** utilizando o padrão **MVC**. O objetivo é permitir o cadastro, visualização e gerenciamento de discos, faixas, artistas e gêneros musicais.
 
-##  ![image](https://github.com/user-attachments/assets/5fcdb3f0-4836-4502-884e-c7c93d40a96f)
-
-
 
 > - Página inicial
 > ![image](https://github.com/user-attachments/assets/534ba63a-e5a7-4e0e-972a-b5f9aecf71fe)
